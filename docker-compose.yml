@@ -1,0 +1,20 @@
+version: "latest"
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: frontend-practice
+    restart: always
+    ports:
+      - "5173:5173"
+    networks:
+      - frontend-network
+    volumes:
+      - frontend-data:/app
+
+volumes:
+  frontend-data:
+networks:
+  frontend-network:
+    driver: bridge
