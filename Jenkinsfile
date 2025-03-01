@@ -17,7 +17,7 @@ pipeline{
         stage("Push"){
             steps{
                 echo "Here we need to Push the image to dockerHub"
-                sh "docker login -u ritiksuteri -p Rohit@123%"
+                sh "docker login -u ritiksuteri -p <dockerhub_password>"
                 sh "docker push ritiksuteri/gemini-clone-app:v2"
                 echo "Docker image pushed successfully"
             }
